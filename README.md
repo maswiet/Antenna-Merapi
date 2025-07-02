@@ -50,7 +50,7 @@ Repositori ini juga mendukung lingkungan MATLAB (Code telah ditest dengan Matlab
 - Deep Learning Toolbox
 - Wavelet Toolbox
 
-### Python
+### Python (Under Construction)
 - Python ≥ 3.8
 - Paket yang diperlukan:
   - `obspy`
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Cara Menggunakan
+//## 🚀 Cara Menggunakan
 
 ### 1. Menampilkan Event
 ```bash
