@@ -42,6 +42,15 @@ Antenna-Merapi/
 
 ## 🔧 Persyaratan
 
+### MATLAB
+Repositori ini juga mendukung lingkungan MATLAB (Code telah ditest dengan MatlabR2025a) untuk pemrosesan data seismik dan infrasonik. Pastikan Anda memiliki MATLAB dengan toolbox berikut:
+- Signal Processing Toolbox
+- Mapping Toolbox
+- Statistics and Machine Learning Toolbox
+- Deep Learning Toolbox
+- Wavelet Toolbox
+
+### Python
 - Python ≥ 3.8
 - Paket yang diperlukan:
   - `obspy`
