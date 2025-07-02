@@ -10,7 +10,7 @@ Folder ini berisi kumpulan referensi ilmiah terkait pemrosesan dan analisis siny
    🔗 [https://doi.org/10.1016/j.jvolgeores.2010.12.006](https://www.sciencedirect.com/science/article/pii/S0377027311001727)
 
 2. **Fee, D., Matoza, R.S. (2013).** An overview of volcano infrasound: From Hawaiian to Plinian, local to global.  
-   🔗 [https://doi.org/10.1002/2013GL058418]([https://doi.org/10.1002/2013GL058418](https://www.sciencedirect.com/science/article/pii/S0377027312002685))
+   🔗 [https://doi.org/10.1002/2013GL058418](https://www.sciencedirect.com/science/article/pii/S0377027312002685)
 
 3. **Ripepe, M., Marchetti, E., et al. (2019).** Infrasonic early warning for explosive eruptions.  
    🔗 [https://doi.org/10.1038/s41467-019-10277-x](https://doi.org/10.1038/s41467-019-10277-x)
