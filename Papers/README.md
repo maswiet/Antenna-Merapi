@@ -7,7 +7,7 @@ Folder ini berisi kumpulan referensi ilmiah terkait pemrosesan dan analisis siny
 ## 📚 Daftar Paper Terkait
 
 1. **Johnson, J.B., & Ripepe, M. (2011).** Volcano infrasound: A review.  
-   🔗 [https://doi.org/10.1016/j.jvolgeores.2010.12.006](https://doi.org/10.1016/j.jvolgeores.2010.12.006)
+   🔗 [https://doi.org/10.1016/j.jvolgeores.2010.12.006](https://www.sciencedirect.com/science/article/pii/S0377027311001727)
 
 2. **Fee, D., Matoza, R.S. (2013).** An overview of volcano infrasound: From Hawaiian to Plinian, local to global.  
    🔗 [https://doi.org/10.1002/2013GL058418](https://doi.org/10.1002/2013GL058418)
