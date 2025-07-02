@@ -13,7 +13,7 @@ Folder ini berisi kumpulan referensi ilmiah terkait pemrosesan dan analisis siny
    🔗 [https://doi.org/10.1002/2013GL058418](https://www.sciencedirect.com/science/article/pii/S0377027312002685)
 
 3. **Ripepe, M., Marchetti, E., et al. (2019).** Infrasonic early warning for explosive eruptions.  
-   🔗 [https://doi.org/10.1038/s41467-019-10277-x](https://doi.org/10.1038/s41467-019-10277-x)
+   🔗 [https://doi.org/10.1038/s41467-019-10277-x](https://www.researchgate.net/publication/328646209_Infrasonic_Early_Warning_System_for_Explosive_Eruptions)
 
 4. **Ichihara, M., et al. (2012).** Detection of eruption using extremely low-cost infrasonic sensors.  
    🔗 [https://doi.org/10.1007/s00445-012-0619-5](https://doi.org/10.1007/s00445-012-0619-5)
