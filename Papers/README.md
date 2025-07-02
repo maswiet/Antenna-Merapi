@@ -20,6 +20,8 @@ Folder ini berisi kumpulan referensi ilmiah terkait pemrosesan dan analisis siny
 
 5. **Matoza, R.S., Fee, D., et al. (2022).** Volcano infrasound and the international monitoring system.  
    🔗 [https://doi.org/10.1007/s00024-021-02743-5](https://doi.org/10.1007/s00024-021-02743-5)
+6. **Kathleen McKee, David Fee, Matthew Haney, Robin S. Matoza, John LyonsMatoza (2022).** Infrasound Signal Detection and Back Azimuth Estimation Using Ground-Coupled Airwaves on a Seismo-Acoustic Sensor Pair.  
+   🔗 [https://doi.org/10.1007/s00024-021-02743-5](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2017JB015132)
 
 ---
 
