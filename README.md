@@ -11,19 +11,19 @@
 ```
 Antenna-Merapi/
 │
-├── data/
+├── Data/
 │   ├── seismic/           # Data mentah seismik (MiniSEED, SAC, dll.)
 │   └── infrasound/        # Data mentah infrasonik
 │
-├── scripts/
+├── Code/
 │   ├── view_event.py      # Menampilkan sinyal event
 │   ├── cut_event.py       # Memotong sinyal berdasarkan waktu event
 │   ├── select_event.py    # Antarmuka atau skrip pemilihan event penting
 │   ├── array_processing.py# Beamforming atau FK analysis
 │   └── utils/             # Fungsi bantu (filtering, plotting, dll.)
 │
-├── notebooks/
-│   └── example_analysis.ipynb  # Contoh analisis interaktif
+├── Manuscript/
+│   └── Paper-paper related to infrasonic or antenna project  # Contoh analisis interaktif
 │
 └── README.md
 ```
