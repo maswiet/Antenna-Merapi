@@ -103,7 +103,7 @@ Geophysics Research Group, FMIPA UGM
 ✉️ ws@ugm.ac.id  
 🌐 https://physics.ugm.ac.id
 
-![LinkedIn](https://img.shields.io/badge/LinkedIn-wiwit--suryanto-blue?logo=linkedin&style=flat-square) [wiwit-suryanto](https://www.linkedin.com/in/wiwit-suryanto-10567711/)
+![LinkedIn](https://img.shields.io/badge/LinkedIn-wiwit--suryanto-blue?logo=linkedin&style=flat-square) [Wiwit](https://www.linkedin.com/in/wiwit-suryanto-10567711/)
 
 
 
