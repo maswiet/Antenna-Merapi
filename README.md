@@ -2,7 +2,7 @@
 
 **Antenna-Merapi** adalah repositori yang berisi data dan kode pemrosesan seismik dan infrasonik dari 5 stasiun yang terpasang di Gunung Merapi, Indonesia. Proyek ini adalah kolaborasi antara Laboratorium Geofisika UGM dengan Gempa GmbH yang bertujuan untuk menampilkan, memilih, dan menganalisis event seismik dan infrasonik dengan pendekatan **array processing**.
 
-![Alt text](images/example.png)
+![Alt text](Gambar/AntennaMerapi.jpg)
 
 ---
 
