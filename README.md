@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 ---
 
-//## 🚀 Cara Menggunakan
+<!## 🚀 Cara Menggunakan
 
 ### 1. Menampilkan Event
 ```bash
@@ -90,7 +90,7 @@ python scripts/select_event.py --input_folder cut_data/
 ```bash
 python scripts/array_processing.py --method fk --channel EHZ --start 2023-08-25T16:10:00 --end 2023-08-25T16:15:00
 ```
-
+>
 ---
 
 ## 📌 Catatan
