@@ -15,8 +15,8 @@ Folder ini berisi kumpulan referensi ilmiah terkait pemrosesan dan analisis siny
 3. **Ripepe, M., Marchetti, E., et al. (2019).** Infrasonic early warning for explosive eruptions.  
    🔗 [https://doi.org/10.1038/s41467-019-10277-x](https://www.researchgate.net/publication/328646209_Infrasonic_Early_Warning_System_for_Explosive_Eruptions)
 
-4. **Ichihara, M., et al. (2012).** Detection of eruption using extremely low-cost infrasonic sensors.  
-   🔗 [https://doi.org/10.1007/s00445-012-0619-5](https://doi.org/10.1007/s00445-012-0619-5)
+4. **Jacques Grangeon, Philippe Lesage. (2019)** A robust, low-cost and well-calibrated infrasound sensor for volcano monitoring.  
+   🔗 [https://doi.org/10.1007/s00445-012-0619-5](https://www.sciencedirect.com/science/article/pii/S0377027319302665)
 
 5. **Matoza, R.S., Fee, D., et al. (2022).** Volcano infrasound and the international monitoring system.  
    🔗 [https://doi.org/10.1007/s00024-021-02743-5](https://escholarship.org/content/qt80b905sp/qt80b905sp.pdf)
