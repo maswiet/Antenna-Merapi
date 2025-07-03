@@ -45,6 +45,14 @@ Antenna-Merapi/
 ![Alt text](Code/Gambar/arr_loc.png)
 
 - 📊 Visualisasi waveforms, array response, dan peta polar
+- Generate Synthetic Signal and Beamforming
+
+  ![Alt text](Code/Gambar/syn_arr_dat.png)
+
+  ![Alt text](Code/Gambar/fk_syn.png)
+
+Input backazimuth: 120.0 deg, output estimate: 120.4 deg
+Input slowness: 0.667 s/km, output estimate: 0.679 s/km
 
 ---
 ![Alt text](Code/Gambar/psd.png)
