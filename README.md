@@ -41,6 +41,9 @@ Antenna-Merapi/
  ![Alt text](Code/Gambar/bukpot.png)
 - ⭐ **Memilih event** untuk dianalisis lebih lanjut
 - 📡 **Array processing** (beamforming, FK analysis) untuk estimasi arah datang dan kecepatan fasa
+
+![Alt text](Code/Gambar/ar_loc.png)
+
 - 📊 Visualisasi waveforms, array response, dan peta polar
 
 ---
