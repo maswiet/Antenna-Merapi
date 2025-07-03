@@ -33,7 +33,7 @@ Antenna-Merapi/
 ## 📌 Fitur Utama
 
 - ✅ **Menampilkan event** dari data mentah seismik dan infrasonik
-- ✂️ **Memotong event** berdasarkan waktu atau katalog
+- ✂️ **Memotong event** berdasarkan waktu atau katalog <br>
  ![Alt text](Code/Gambar/bukpot.png)
 - ⭐ **Memilih event** untuk dianalisis lebih lanjut
 - 📡 **Array processing** (beamforming, FK analysis) untuk estimasi arah datang dan kecepatan fasa
