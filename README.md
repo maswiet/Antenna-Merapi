@@ -39,7 +39,7 @@ Antenna-Merapi/
 - 📊 Visualisasi waveforms, array response, dan peta polar
 
 ---
-
+![Alt text](Code/Gambar/psd.png)
 ## 🔧 Persyaratan
 
 ### MATLAB
