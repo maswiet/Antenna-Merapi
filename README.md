@@ -34,7 +34,7 @@ Antenna-Merapi/
 
 - ✅ **Menampilkan event** dari data mentah seismik dan infrasonik
 - ✂️ **Memotong event** berdasarkan waktu atau katalog
-- ![Alt text](Code/Gambar/psd.png)
+ ![Alt text](Code/Gambar/bukpot.png)
 - ⭐ **Memilih event** untuk dianalisis lebih lanjut
 - 📡 **Array processing** (beamforming, FK analysis) untuk estimasi arah datang dan kecepatan fasa
 - 📊 Visualisasi waveforms, array response, dan peta polar
