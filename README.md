@@ -33,6 +33,9 @@ Antenna-Merapi/
 ## 📌 Fitur Utama
 
 - ✅ **Menampilkan event** dari data mentah seismik dan infrasonik
+
+   ![Alt text](Code/Gambar/drums.png)
+
 - ✂️ **Memotong event** berdasarkan waktu atau katalog [dengan m-file bukti_potong_pajak.m]<br>
 
  ![Alt text](Code/Gambar/bukpot.png)
