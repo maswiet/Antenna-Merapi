@@ -15,7 +15,7 @@ Folder ini berisi manuskrip ilmiah yang telah disusun berdasarkan hasil riset pe
 
 ### 2. Dairoh et al. (2025)
 **Judul**: Discrimination of Seismic Signals in UGM Antenna Station Recordings at Merapi Volcano Using a Remote Seismic Array: Beamforming and FK Analysis  
-**Status**: Submitted (Under Review in Journal of Seismology)
+**Status**: Submitted (Rejected, Journal of Seismology, Jul 3, 7:55PM)
 **Link Dokumen**: [📄 Dairoh_et_al_2025.pdf](./Dairoh_et_al_2025.pdf)
 
 ---
