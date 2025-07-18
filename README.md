@@ -8,7 +8,7 @@ While volcanic infrasound is widely used for eruption detection and vertical jet
 
 ## 1. Array Analysis of Volcanic Infrasound and Seismicity
 Studi beamforming/vespagram multi-event:
-Teliti spatiotemporal variasi sumber infrasound selama periode aktif—arah, kecepatan propagasi, dan hubungannya dengan morfologi kawah atau kolom erupsi.
+Penelitian spatiotemporal variasi sumber infrasound selama periode aktif—arah, kecepatan propagasi, dan hubungannya dengan morfologi kawah atau kolom erupsi.
 
 Studi source migration:
 Analisis dinamika lokasi sumber guguran piroklastik atau letusan dari array (mendeteksi perubahan posisi sumber dengan waktu).
