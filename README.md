@@ -34,7 +34,7 @@ Script ini siap untuk **MATLAB**, bisa langsung kamu jalankan dengan penyesuaian
 
 ---
 
-## **SCRIPT MATLAB ALL-IN-ONE**
+## **SCRIPT MATLAB **
 
 ```matlab
 % ===== PARAMETER & PREPROCESSING =====
@@ -168,7 +168,7 @@ grid on
 
 sgtitle('Array Infrasound Slowness Analysis, 25 Agustus 2023')
 
-
+```
 
 ## 2. Multi-Physical Correlation (Seismic-Infrasound)
 Korelasi seismik-infrasound:
