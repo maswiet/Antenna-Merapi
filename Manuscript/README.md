@@ -9,8 +9,7 @@ Folder ini berisi manuskrip ilmiah yang telah disusun berdasarkan hasil riset pe
 ### 1. Permana et al. (2025)
 **Judul**: Seismic monitoring of Merapi volcano using a suboptimal low-cost array  
 **Status**: Submitted (Under review in Open Geosciences)  
-**Link Dokumen**: [📄 Permana_et_al_2025.pdf](./Permana_et_al_2025.pdf)
-[- Permana et al ](https://acrobat.adobe.com/id/urn:aaid:sc:AP:43a442c1-fa9a-405b-9288-ec489bc712d8)
+**Link Dokumen**: [📄 Permana_et_al_2025.pdf] (https://acrobat.adobe.com/id/urn:aaid:sc:AP:43a442c1-fa9a-405b-9288-ec489bc712d8)
 
 ---
 
