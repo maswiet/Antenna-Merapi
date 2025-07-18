@@ -169,7 +169,7 @@ grid on
 sgtitle('Array Infrasound Slowness Analysis, 25 Agustus 2023')
 
 ```
-
+![Alt text](Gambar/Figure_3.png)
 ## 2. Multi-Physical Correlation (Seismic-Infrasound)
 Korelasi seismik-infrasound:
 Studi relasi antara timing dan karakteristik sinyal seismik dan infrasound untuk setiap event.
