@@ -28,7 +28,6 @@ Berikut adalah **prosedur lengkap** , **untuk data 5 stasiun infrasound** pada t
 ### 4. **Ambil lag time maksimum**
 
 ### 5. **Inversi slowness vector (velocity & azimuth)**
-Tentu! Berikut adalah format **Markdown GitHub** dari gambar yang kamu berikan:
 
 ---
 
