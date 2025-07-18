@@ -6,6 +6,64 @@
 
 While volcanic infrasound is widely used for eruption detection and vertical jetting source characterization, the use of infrasound arrays for quantitative estimation of lateral pyroclastic density current (PDC) propagation—particularly the direction and velocity as the material flows down the volcano’s slopes—remains underexplored. Previous works have rarely focused on the challenge of differentiating PDC-related infrasound signatures from those of other eruptive or non-eruptive processes, especially in complex topography and in tropical volcano settings. There is a need for robust signal processing and array techniques to constrain the azimuthal direction and apparent velocity of PDCs using dense, small-aperture infrasound arrays, and for ground-truth validation with direct or video observations. This research aims to fill these gaps by developing quantitative methods for real-time detection and directional estimation of PDCs using infrasound array data at Mt. Merapi.
 
+## 1. Array Analysis of Volcanic Infrasound and Seismicity
+Studi beamforming/vespagram multi-event:
+Teliti spatiotemporal variasi sumber infrasound selama periode aktif—arah, kecepatan propagasi, dan hubungannya dengan morfologi kawah atau kolom erupsi.
+
+Studi source migration:
+Analisis dinamika lokasi sumber guguran piroklastik atau letusan dari array (mendeteksi perubahan posisi sumber dengan waktu).
+
+## 2. Multi-Physical Correlation (Seismic-Infrasound)
+Korelasi seismik-infrasound:
+Studi relasi antara timing dan karakteristik sinyal seismik dan infrasound untuk setiap event.
+Apakah semua event infrasound diikuti seismik, dan sebaliknya?
+
+Constraint on Source Depth:
+Model timing difference infrasound vs seismik untuk memperkirakan kedalaman sumber atau mekanisme sumber.
+
+## 3. Eruption Source Mechanism & Classification
+Classification using machine learning:
+
+Klasterisasi otomatis waveform (seismik dan infrasound) untuk membedakan tipe erupsi: guguran, letusan eksplosif, degassing, dsb.
+
+Moment tensor/pressure pulse modeling:
+
+Model parameter fisik sumber letusan menggunakan data array multi-instrument.
+
+## 4. Real-Time Early Warning Demonstration
+Prototype real-time detection:
+
+Tunjukkan (simulasi atau nyata) sistem deteksi dan klasifikasi otomatis berbasis array, misal untuk Early Warning guguran atau letusan.
+
+Performance analysis:
+
+Evaluasi ketepatan/lead-time deteksi multi-event dibanding sistem resmi.
+
+## 5. Propagation and Atmospheric Effects
+Studi atmosfer dinamis:
+
+Analisis perubahan kecepatan propagasi infrasound harian (pengaruh suhu, angin, dsb) menggunakan velocity dari array.
+
+Sound scattering and attenuation:
+
+Studi efek morfologi kawah/gunung terhadap bentuk sinyal dan atenuasi.
+
+## 6. Long-term Statistical Event Analysis
+Statistik dan katalog otomatis:
+
+Buat katalog letusan/guguran untuk seluruh periode, analisis frekuensi, clustering waktu, dan hubungkan dengan parameter lain (cuaca, visual, dst).
+
+Event rate vs. weather:
+
+Korelasikan event dengan data cuaca, tekanan udara, kelembaban (jika tersedia).
+
+## 7. Seismo-acoustic Source Relocation
+Relokasi sumber event:
+
+Kombinasikan data waktu tiba (arrival) dari seismik dan infrasound untuk mengestimasi lokasi sumber 3D secara lebih presisi.
+
+
+
 ---
 
 ## 📁 Struktur Repositori
