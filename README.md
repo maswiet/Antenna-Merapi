@@ -13,249 +13,120 @@ Penelitian spatiotemporal variasi sumber infrasound selama periode aktif—arah,
 Studi source migration:
 Analisis dinamika lokasi sumber guguran piroklastik atau letusan dari array (mendeteksi perubahan posisi sumber dengan waktu).
 
-## Langkah-Langkah Analisis Data Infrasound Array
-0. Data & Parameter
-5 stasiun infrasound, diketahui koordinat ( 
-𝑥
-𝑛
-x 
-n
-​
-  )
+Tentu! Berikut adalah **prosedur lengkap** sesuai kriteria pada gambar, **untuk data 5 stasiun infrasound** pada tanggal **25 Agustus 2023**.
+Script ini siap untuk **MATLAB**, bisa langsung kamu jalankan dengan penyesuaian minor jika perlu.
 
-Fs = 100 Hz
+---
 
-Periode analisis: 24–30 Agustus 2023 (window saat semua data lengkap, no missing)
+## **Langkah-langkah Analisis (25 Agustus 2023):**
 
-Window data per analisis: tentukan sendiri (misal 10–30 detik, rolling)
+### 1. **Load dan Sinkronisasi Data**
 
-1. High-pass Filtering
-Filter Butterworth orde-2 dengan cutoff >1 Hz
-Contoh MATLAB:
+### 2. **High-pass filtering (>1 Hz, 2nd order Butterworth)**
 
-matlab
-Copy
-Edit
-[b, a] = butter(2, 1/(Fs/2), 'high');
-d_filt = filtfilt(b, a, d);
-2. Hitung Cross-correlation Semua Pasangan Stasiun
-Untuk setiap pasangan stasiun 
-(
-𝑛
-,
-𝑚
-)
-(n,m), pada setiap window waktu,
-Hitung:
+### 3. **Windowed cross-correlation semua pasangan stasiun**
 
-𝑐
-𝑛
-𝑚
-(
-𝛿
-𝑡
-;
-𝑡
-0
-)
-=
-∫
-𝑡
-0
-−
-Δ
-𝑇
-/
-2
-𝑡
-0
-+
-Δ
-𝑇
-/
-2
-𝑓
-𝑛
-(
-𝑡
-)
-𝑓
-𝑚
-(
-𝑡
-+
-𝛿
-𝑡
-)
-𝑑
-𝑡
-c 
-nm
-​
- (δt;t 
-0
-​
- )=∫ 
-t 
-0
-​
- −ΔT/2
-t 
-0
-​
- +ΔT/2
-​
- f 
-n
-​
- (t)f 
-m
-​
- (t+δt)dt
-Praktis: gunakan xcorr di MATLAB (cross-correlation windowed)
+### 4. **Ambil lag time maksimum**
 
-Hitung pada beberapa nilai lag (δt) ± beberapa detik (sesuaikan jarak array)
+### 5. **Inversi slowness vector (velocity & azimuth)**
 
-3. Dapatkan Lag Time Maksimum
-Untuk setiap pasangan, cari lag (δt) di mana cross-correlation maksimum:
+### 6. **Plot hasil sebagai fungsi waktu (VESPAgram)**
 
-𝛿
-𝑡
-𝑛
-𝑚
-=
-arg
-⁡
-max
-⁡
-𝛿
-𝑡
-[
-𝑐
-𝑛
-𝑚
-(
-𝛿
-𝑡
-)
-]
-δt 
-nm
-​
- =arg 
-δt
-max
-​
- [c 
-nm
-​
- (δt)]
-Praktis di MATLAB: [~,imax]=max(crosscorr); lag_max = lags(imax)/Fs;
+---
 
-4. Dapatkan Arrival Slowness Vector (Arah & Kecepatan)
-Solusi inversi:
+## **SCRIPT MATLAB ALL-IN-ONE**
 
-𝑠
-=
-arg
-⁡
-min
-⁡
-𝑠
-[
-∑
-𝑛
-≠
-𝑚
-(
-𝑠
-⋅
-(
-𝑥
-𝑚
-−
-𝑥
-𝑛
-)
-−
-𝛿
-𝑡
-𝑛
-𝑚
-)
-2
-]
-s=arg 
-s
-min
-​
-  
-​
-  
-n
-
-=m
-∑
-​
- (s⋅(x 
-m
-​
- −x 
-n
-​
- )−δt 
-nm
-​
- ) 
-2
-  
-​
- 
-𝑠
-s = vektor slowness 
-(
-detik/meter
-)
-(detik/meter) → arah propagasi & kecepatan gelombang.
+```matlab
+% ===== PARAMETER & PREPROCESSING =====
+Fs = 100; % Hz
+sensitivity = 0.00625; % Pa/count
+stasiun = {'RE5DE','R6940','R265F','R7D17','R0279'};
+lat = [-7.692254, -7.692179, -7.694289, -7.693931, -7.691258];
+lon = [110.438530, 110.441112, 110.438977, 110.441316, 110.440031];
+julian_day = 237; % 25 Agustus 2023
 
-Optimasi/inversi: biasanya via Least Squares (closed form), atau grid search.
+start_dt = datenum(2023,8,25,0,0,0);
+end_dt   = datenum(2023,8,25,23,59,59);
 
-Pseudocode MATLAB (Contoh All-in-One Loop)
-matlab
-Copy
-Edit
-% Asumsi: waveform_mat [Nsample x Nsta], pos = [x y] (meter)
+Nsta = numel(stasiun);
+data_array = cell(1,Nsta);
+time_array = cell(1,Nsta);
+
+% --- Load & filter data
+for i = 1:Nsta
+    fname = sprintf('%s/HDF.D/AM.%s.00.HDF.D.2023.%03d', stasiun{i}, stasiun{i}, julian_day);
+    X = rdmseed(fname);
+    t = cat(1, X.t);
+    d = cat(1, X.d);
+    idx = t >= start_dt & t <= end_dt;
+    d = d(idx);
+    t = t(idx);
+    d = detrend(d);
+    d = d * sensitivity;
+    [b,a] = butter(2, 1/(Fs/2), 'high');
+    d = filtfilt(b,a,d);
+    data_array{i} = d;
+    time_array{i} = t;
+end
+
+% --- Sinkronisasi waktu (ambil window data overlap)
+t_start = max(cellfun(@(x)x(1), time_array));
+t_end   = min(cellfun(@(x)x(end), time_array));
+nmin = min(cellfun(@length, data_array));
+
+for i = 1:Nsta
+    idx = time_array{i} >= t_start & time_array{i} <= t_end;
+    data_array{i} = data_array{i}(idx);
+    time_array{i} = time_array{i}(idx);
+end
+Nsample = min(cellfun(@length, data_array));
+waveform_mat = zeros(Nsample, Nsta);
+for i = 1:Nsta
+    waveform_mat(:,i) = data_array{i}(1:Nsample);
+end
+t_ref = time_array{1}(1:Nsample);
+
+% --- Koordinat lokal (meter)
+R = 6371000; % m
+lat0 = lat(1); lon0 = lon(1);
+x = (lon - lon0) * cosd(lat0) * (pi/180) * R;
+y = (lat - lat0) * (pi/180) * R;
+pos = [x(:) y(:)];
+
+% ===== WINDOW ANALYSIS & ARRAY PROCESSING =====
 window_length = 20; % detik
-step_length = 10;   % detik (overlap)
-window_samples = window_length * Fs;
-step_samples = step_length * Fs;
-Nsta = size(waveform_mat,2);
+step_length = 10;   % detik
+window_samples = round(window_length * Fs);
+step_samples = round(step_length * Fs);
+ntotal = floor((Nsample-window_samples)/step_samples);
 
-for k = 1:step_samples:(size(waveform_mat,1)-window_samples)
-    idx = k:(k+window_samples-1);
-    t0 = mean(t_ref(idx));
+t_center = zeros(ntotal,1);
+azimuth = zeros(ntotal,1);
+velocity = zeros(ntotal,1);
+maxcorr_mean = zeros(ntotal,1);
+
+for k = 1:ntotal
+    idx = 1 + (k-1)*step_samples : (k-1)*step_samples + window_samples;
+    t_center(k) = mean(t_ref(idx));
     d_win = waveform_mat(idx, :);
-    
-    % 1. Highpass
-    for i = 1:Nsta
-        d_win(:,i) = filtfilt(b, a, d_win(:,i));
-    end
-    
-    % 2. Cross-corr setiap pasangan
+
+    % --- Cross-correlation untuk semua pasangan ---
     lagmat = zeros(Nsta,Nsta);
     maxcorr = zeros(Nsta,Nsta);
-    lags_sec = (-2*Fs):(2*Fs); % window lag ±2 detik
+    max_lag = 2*Fs; % ±2 detik
     for n = 1:Nsta-1
         for m = (n+1):Nsta
-            [c,lags] = xcorr(d_win(:,n), d_win(:,m), 2*Fs, 'coeff');
+            [c,lags] = xcorr(d_win(:,n), d_win(:,m), max_lag, 'coeff');
             [~,imax]=max(abs(c));
             lag_s = lags(imax)/Fs;
             lagmat(n,m) = lag_s;
-            maxcorr(n,m) = c(imax);
+            lagmat(m,n) = -lag_s; % anti-simetri
+            maxcorr(n,m) = abs(c(imax));
+            maxcorr(m,n) = abs(c(imax));
         end
     end
-    % 3. Slowness vector (azimuth & velocity)
-    % Siapkan vektor differences:
+
+    % --- Siapkan matriks differensi posisi dan lag ---
     dt = [];
     D  = [];
     for n = 1:Nsta-1
@@ -264,22 +135,38 @@ for k = 1:step_samples:(size(waveform_mat,1)-window_samples)
             D  = [D; (pos(m,:) - pos(n,:))];
         end
     end
-    % Least squares solve for slowness
-    s_vec = (D\dt); % [sx; sy] slowness vector (sec/m)
+    % --- Least Squares slowness vector ---
+    s_vec = (D\dt); % [sx; sy] slowness (s/m)
     v = 1/norm(s_vec); % velocity (m/s)
-    az = atan2d(s_vec(2), s_vec(1)); % azimuth (deg)
-    % Simpan t0, v, az, maxcorr mean, dst.
+    az = atan2d(s_vec(2), s_vec(1)); % azimuth (deg, dari timur ccw)
+    azimuth(k) = mod(az,360); % biar 0-360
+    velocity(k) = v;
+    maxcorr_mean(k) = mean(maxcorr(maxcorr>0)); % mean crosscorr value
 end
-Hasil:
-Untuk setiap window, dapatkan:
 
-Velocity propagasi gelombang
+% ====== PLOTTING VESPAgram ======
+figure;
+subplot(3,1,1)
+plot((t_center-t_center(1))*24*3600, velocity, 'k','LineWidth',1.2)
+ylabel('Velocity (m/s)')
+title('VESPAgram: Velocity')
+xlim([0, (t_center(end)-t_center(1))*24*3600])
 
-Azimuth datangnya gelombang
+subplot(3,1,2)
+plot((t_center-t_center(1))*24*3600, azimuth, 'b','LineWidth',1.2)
+ylabel('Azimuth (deg)')
+title('VESPAgram: Azimuth')
+xlim([0, (t_center(end)-t_center(1))*24*3600])
 
-(Opsional: quality/mean max correlation antar pasangan)
+subplot(3,1,3)
+plot((t_center-t_center(1))*24*3600, maxcorr_mean, 'r','LineWidth',1.2)
+ylabel('Mean Corr')
+xlabel('Time (s) sejak tengah malam')
+title('Mean Cross-corr antar Pasangan')
+xlim([0, (t_center(end)-t_center(1))*24*3600])
+grid on
 
-Plot vespagram: velocity dan azimuth terhadap waktu.
+sgtitle('Array Infrasound Slowness Analysis, 25 Agustus 2023')
 
 
 
