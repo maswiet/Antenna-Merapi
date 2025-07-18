@@ -170,6 +170,12 @@ sgtitle('Array Infrasound Slowness Analysis, 25 Agustus 2023')
 
 ```
 ![Alt text](Gambar/Figure_3.png)
+
+## Zoom 15 menit mulai 16:05 UTC 
+![Alt text](Gambar/Figure_5.png)
+
+Perhatikan kriteria infrasound signal diantaranya adalah kecepatan rambatnya yang ~ 337 - 370 m/s (kecepatan gelombang suara)
+
 ## 2. Multi-Physical Correlation (Seismic-Infrasound)
 Korelasi seismik-infrasound:
 Studi relasi antara timing dan karakteristik sinyal seismik dan infrasound untuk setiap event.
