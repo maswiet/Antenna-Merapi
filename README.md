@@ -13,6 +13,276 @@ Penelitian spatiotemporal variasi sumber infrasound selama periode aktif—arah,
 Studi source migration:
 Analisis dinamika lokasi sumber guguran piroklastik atau letusan dari array (mendeteksi perubahan posisi sumber dengan waktu).
 
+## Langkah-Langkah Analisis Data Infrasound Array
+0. Data & Parameter
+5 stasiun infrasound, diketahui koordinat ( 
+𝑥
+𝑛
+x 
+n
+​
+  )
+
+Fs = 100 Hz
+
+Periode analisis: 24–30 Agustus 2023 (window saat semua data lengkap, no missing)
+
+Window data per analisis: tentukan sendiri (misal 10–30 detik, rolling)
+
+1. High-pass Filtering
+Filter Butterworth orde-2 dengan cutoff >1 Hz
+Contoh MATLAB:
+
+matlab
+Copy
+Edit
+[b, a] = butter(2, 1/(Fs/2), 'high');
+d_filt = filtfilt(b, a, d);
+2. Hitung Cross-correlation Semua Pasangan Stasiun
+Untuk setiap pasangan stasiun 
+(
+𝑛
+,
+𝑚
+)
+(n,m), pada setiap window waktu,
+Hitung:
+
+𝑐
+𝑛
+𝑚
+(
+𝛿
+𝑡
+;
+𝑡
+0
+)
+=
+∫
+𝑡
+0
+−
+Δ
+𝑇
+/
+2
+𝑡
+0
++
+Δ
+𝑇
+/
+2
+𝑓
+𝑛
+(
+𝑡
+)
+𝑓
+𝑚
+(
+𝑡
++
+𝛿
+𝑡
+)
+𝑑
+𝑡
+c 
+nm
+​
+ (δt;t 
+0
+​
+ )=∫ 
+t 
+0
+​
+ −ΔT/2
+t 
+0
+​
+ +ΔT/2
+​
+ f 
+n
+​
+ (t)f 
+m
+​
+ (t+δt)dt
+Praktis: gunakan xcorr di MATLAB (cross-correlation windowed)
+
+Hitung pada beberapa nilai lag (δt) ± beberapa detik (sesuaikan jarak array)
+
+3. Dapatkan Lag Time Maksimum
+Untuk setiap pasangan, cari lag (δt) di mana cross-correlation maksimum:
+
+𝛿
+𝑡
+𝑛
+𝑚
+=
+arg
+⁡
+max
+⁡
+𝛿
+𝑡
+[
+𝑐
+𝑛
+𝑚
+(
+𝛿
+𝑡
+)
+]
+δt 
+nm
+​
+ =arg 
+δt
+max
+​
+ [c 
+nm
+​
+ (δt)]
+Praktis di MATLAB: [~,imax]=max(crosscorr); lag_max = lags(imax)/Fs;
+
+4. Dapatkan Arrival Slowness Vector (Arah & Kecepatan)
+Solusi inversi:
+
+𝑠
+=
+arg
+⁡
+min
+⁡
+𝑠
+[
+∑
+𝑛
+≠
+𝑚
+(
+𝑠
+⋅
+(
+𝑥
+𝑚
+−
+𝑥
+𝑛
+)
+−
+𝛿
+𝑡
+𝑛
+𝑚
+)
+2
+]
+s=arg 
+s
+min
+​
+  
+​
+  
+n
+
+=m
+∑
+​
+ (s⋅(x 
+m
+​
+ −x 
+n
+​
+ )−δt 
+nm
+​
+ ) 
+2
+  
+​
+ 
+𝑠
+s = vektor slowness 
+(
+detik/meter
+)
+(detik/meter) → arah propagasi & kecepatan gelombang.
+
+Optimasi/inversi: biasanya via Least Squares (closed form), atau grid search.
+
+Pseudocode MATLAB (Contoh All-in-One Loop)
+matlab
+Copy
+Edit
+% Asumsi: waveform_mat [Nsample x Nsta], pos = [x y] (meter)
+window_length = 20; % detik
+step_length = 10;   % detik (overlap)
+window_samples = window_length * Fs;
+step_samples = step_length * Fs;
+Nsta = size(waveform_mat,2);
+
+for k = 1:step_samples:(size(waveform_mat,1)-window_samples)
+    idx = k:(k+window_samples-1);
+    t0 = mean(t_ref(idx));
+    d_win = waveform_mat(idx, :);
+    
+    % 1. Highpass
+    for i = 1:Nsta
+        d_win(:,i) = filtfilt(b, a, d_win(:,i));
+    end
+    
+    % 2. Cross-corr setiap pasangan
+    lagmat = zeros(Nsta,Nsta);
+    maxcorr = zeros(Nsta,Nsta);
+    lags_sec = (-2*Fs):(2*Fs); % window lag ±2 detik
+    for n = 1:Nsta-1
+        for m = (n+1):Nsta
+            [c,lags] = xcorr(d_win(:,n), d_win(:,m), 2*Fs, 'coeff');
+            [~,imax]=max(abs(c));
+            lag_s = lags(imax)/Fs;
+            lagmat(n,m) = lag_s;
+            maxcorr(n,m) = c(imax);
+        end
+    end
+    % 3. Slowness vector (azimuth & velocity)
+    % Siapkan vektor differences:
+    dt = [];
+    D  = [];
+    for n = 1:Nsta-1
+        for m = (n+1):Nsta
+            dt = [dt; lagmat(n,m)];
+            D  = [D; (pos(m,:) - pos(n,:))];
+        end
+    end
+    % Least squares solve for slowness
+    s_vec = (D\dt); % [sx; sy] slowness vector (sec/m)
+    v = 1/norm(s_vec); % velocity (m/s)
+    az = atan2d(s_vec(2), s_vec(1)); % azimuth (deg)
+    % Simpan t0, v, az, maxcorr mean, dst.
+end
+Hasil:
+Untuk setiap window, dapatkan:
+
+Velocity propagasi gelombang
+
+Azimuth datangnya gelombang
+
+(Opsional: quality/mean max correlation antar pasangan)
+
+Plot vespagram: velocity dan azimuth terhadap waktu.
+
+
+
 ## 2. Multi-Physical Correlation (Seismic-Infrasound)
 Korelasi seismik-infrasound:
 Studi relasi antara timing dan karakteristik sinyal seismik dan infrasound untuk setiap event.
