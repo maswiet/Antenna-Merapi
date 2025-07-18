@@ -171,6 +171,7 @@ sgtitle('Array Infrasound Slowness Analysis, 25 Agustus 2023')
 ```
 ![Alt text](Gambar/Figure_3.png)
 
+Keterangan gambar, kolom 1 sinyal infrasonik, kolom 2 RMS amplitudo infrasonik, kolom 3. Reliability sinyal dari array anlysis, kolom 4 azimuth arah sinyal, warna merah menghighlight yang around 0 derajat (arah puncak Merapi), kolom 5 velocity sinyal, warna merah menghighlight kecepatan suara, kolom 6 - 9 time lag correlation antara statiun UGM 1 s/d 5 perhatikan yang around time lag 0 detik mempunyai koherensi sinyal yang tinggi.
 ## Zoom 15 menit mulai 16:05 UTC 
 ![Alt text](Gambar/Figure_5.png)
 
