@@ -29,6 +29,40 @@ Script ini siap untuk **MATLAB**, bisa langsung kamu jalankan dengan penyesuaian
 ### 4. **Ambil lag time maksimum**
 
 ### 5. **Inversi slowness vector (velocity & azimuth)**
+Tentu! Berikut adalah format **Markdown GitHub** dari gambar yang kamu berikan:
+
+---
+
+# **Konsep Matematis Sederhana**
+
+Misal:
+
+* **Lintasan sumber:** $\vec{r}_s(t)$ *(fungsi waktu)*
+* **Lokasi stasiun ke-**$k$: $\vec{r}_k$
+* **Sinyal sumber:** $S(t)$
+
+---
+
+### **Delay arrival** ke stasiun-$k$ pada waktu $t$:
+
+$$
+\tau_k(t) = \frac{|\vec{r}_s(t) - \vec{r}_k|}{v}
+$$
+
+di mana $v$ = kecepatan propagasi infrasound.
+
+---
+
+* **Sinyal di stasiun $k$:**
+
+$$
+x_k(t) = \sum_{t' = t_0}^{t_1} S(t') \cdot \delta \left( t - [ t' + \tau_k(t') ] \right)
+$$
+
+*(Artinya: semua emisi di sepanjang lintasan, setelah delay sesuai jaraknya, diterima di stasiun $k$ pada waktu $t$)*
+
+---
+
 
 ### 6. **Plot hasil sebagai fungsi waktu (VESPAgram)**
 
