@@ -41,7 +41,7 @@ Misal:
 
 ---
 
-### **Delay arrival** ke stasiun-$k$ pada waktu $t$:
+### **Delay arrival** ke stasiun- $k$ pada waktu $t$:
 
 $$
 \tau_k(t) = \frac{|\vec{r}_s(t) - \vec{r}_k|}{v}
