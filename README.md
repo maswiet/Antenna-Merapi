@@ -13,8 +13,7 @@ Penelitian spatiotemporal variasi sumber infrasound selama periode aktif—arah,
 Studi source migration:
 Analisis dinamika lokasi sumber guguran piroklastik atau letusan dari array (mendeteksi perubahan posisi sumber dengan waktu).
 
-Tentu! Berikut adalah **prosedur lengkap** sesuai kriteria pada gambar, **untuk data 5 stasiun infrasound** pada tanggal **25 Agustus 2023**.
-Script ini siap untuk **MATLAB**, bisa langsung kamu jalankan dengan penyesuaian minor jika perlu.
+Berikut adalah **prosedur lengkap** , **untuk data 5 stasiun infrasound** pada tanggal **25 Agustus 2023**.
 
 ---
 
