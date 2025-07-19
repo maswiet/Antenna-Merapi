@@ -192,7 +192,7 @@ Teoritis dari pusat ke episenter:
 
 ### Vespagram Model Obspy
 
-  ![Alt text](Gambar/Vespagram_050923.png)
+  ![Alt text](Gambar/vespagram_050923.png)
 
   
 ---
