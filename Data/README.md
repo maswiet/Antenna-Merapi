@@ -9,7 +9,7 @@ Data lengkap ada disini, untuk sinkronisasi bisa menghubungi Admin Server Geofsi
 
 📁 Data Server Geofisika UGM 
 
-![Alt_text](Gambar/folder_sample.png)
+![Alt_text](../Gambar/folder_sample.png)
 
 Selengkapnya dapat menghubungi saya atau Gempa.GmbH
 
