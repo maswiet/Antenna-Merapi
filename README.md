@@ -180,7 +180,7 @@ Real data Event tanggal 5 September 2023, M 4.3 2023-09-05	18:33:29	posisi hipos
   ![Alt text](Code/Gambar/Event_050923.png)
 
 ---
-![Alt text](Code/Gambar/psd.png)
+![Alt text](Gambar/psd.png)
 ## 🔧 Persyaratan
 
 ### MATLAB
