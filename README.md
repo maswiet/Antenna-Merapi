@@ -177,10 +177,10 @@ Input slowness: 0.667 s/km, output estimate: 0.679 s/km
 ---
 ### Real earthquake event
 Real data Event tanggal 5 September 2023, M 4.3 2023-09-05	18:33:29	posisi hiposenter di Lat -8.60, Lon	110.06 depth 25 km
-  ![Alt text](Code/Gambar/Event_050923.png)
+  ![Alt text](Gambar/Event_050923.png)
 
 ---
-![Alt text](Gambar/psd.png)
+![Alt text](Code/Gambar/psd.png)
 ## 🔧 Persyaratan
 
 ### MATLAB
