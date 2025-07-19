@@ -172,13 +172,29 @@ Antenna-Merapi/
 
   ![Alt text](Code/Gambar/fk_syn.png)
 
-Input backazimuth: 120.0 deg, output estimate: 120.4 deg
-Input slowness: 0.667 s/km, output estimate: 0.679 s/km
+- Input backazimuth: 120.0 deg, output estimate: 120.4 deg
+- Input slowness: 0.667 s/km, output estimate: 0.679 s/km
+**
 ---
 ### Real earthquake event
 Real data Event tanggal 5 September 2023, M 4.3 2023-09-05	18:33:29	posisi hiposenter di Lat -8.60, Lon	110.06 depth 25 km
+
   ![Alt text](Gambar/Event_050923.png)
 
+### Radargram
+
+  ![Alt text](Gambar/radargram_050923.png)
+
+Estimasi hasil array:
+  **Backazimuth** = 157.9 deg, **Slowness** = 0.992 s/km
+Teoritis dari pusat ke episenter:
+  **Azimuth** = 145.9 deg, **Slowness input** (asumsi Vp=6 km/s) = 0.750 s/km
+
+### Vespagram Model Obspy
+
+  ![Alt text](Gambar/Vespagram_050923.png)
+
+  
 ---
 ![Alt text](Code/Gambar/psd.png)
 ## 🔧 Persyaratan
