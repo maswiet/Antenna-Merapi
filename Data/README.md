@@ -1,8 +1,13 @@
 ## 🔗 Data Source
 
+Untuk menghindari data corrupt atau data hilang atau terhapus, hindari menyimpan data di hardisk Laptop/PC, kecuali hanya sample data, mengingat ukuran file data yang cukup besar, untuk itu disarankan melakukan sinkronisasi data menggunakan drive komersial (Onedrive/GDrive/DrobBox) atau Server Data Geofisika UGM
 Karena ukuran file terlalu besar untuk GitHub, sampel data MiniSEED dapat diakses di:
 
 📁 [OneDrive Folder – Seismic Data](https://1drv.ms/f/c/dc41f2b8d85d266b/EmsmXdi48kEggNxmAAAAAAABw-10A6RHaFBtJznXEZrMzg?e=nh7eCc)
+
+📁 Data Server Geofisika UGM 
+
+[](Gambar/folder_sample.png)
 
 Selengkapnya dapat menghubungi saya atau Gempa.GmbH
 
