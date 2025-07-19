@@ -191,7 +191,7 @@ Teoritis dari pusat ke episenter:
   **Azimuth** = 145.9 deg, **Slowness input** (asumsi Vp=6 km/s) = 0.750 s/km
 
 ### Vespagram Model Obspy
-
+#### Event  M 4.3, tanggal 5 September 2023, Jam 18:33:29 UTC
   ![Alt text](Gambar/vespagram_050923.png)
 
   
