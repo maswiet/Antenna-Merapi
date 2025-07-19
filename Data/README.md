@@ -6,9 +6,10 @@ Contoh sampel data bisa diakses disini:
 📁 [OneDrive Folder – Seismic Data](https://1drv.ms/f/c/dc41f2b8d85d266b/EmsmXdi48kEggNxmAAAAAAABw-10A6RHaFBtJznXEZrMzg?e=nh7eCc)
 
 Data lengkap ada disini, untuk sinkronisasi bisa menghubungi Admin Server Geofsika UGM, Sdr. Pamungkas Yuliantoro, S.Si atau Dr. T. Marwan Irnaka, M.Sc.
+
 📁 Data Server Geofisika UGM 
 
-![](Gambar/folder_sample.png)
+![Alt_text](Gambar/folder_sample.png)
 
 Selengkapnya dapat menghubungi saya atau Gempa.GmbH
 
